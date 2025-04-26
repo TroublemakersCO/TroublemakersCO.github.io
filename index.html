@@ -1,12 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Pagina Web</title>
+    <meta charset="UTF-8">
+    <title>Mi Página Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('URL_DE_TU_WALLPAPER.jpg'); /* Cambia esto por tu imagen */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 4em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        section {
+            height: 100vh;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
 </head>
 <body>
-  <h1>¡Hola mundo!</h1>
-  <p>Esta es mi primera página en GitHub Pages.</p>
+
+    <div class="navbar">
+        <a href="#inicio">Inicio</a>
+        <a href="#comprar">Comprar</a>
+        <a href="#reglas">Reglas</a>
+    </div>
+
+    <h1>Mi Página Web</h1>
+
+    <section id="inicio">
+        <h2>Inicio</h2>
+        <p>Bienvenido a la sección de inicio.</p>
+    </section>
+
+    <section id="comprar">
+        <h2>Comprar</h2>
+        <p>Aquí puedes encontrar productos para comprar.</p>
+    </section>
+
+    <section id="reglas">
+        <h2>Reglas</h2>
+        <p>Consulta las reglas aquí.</p>
+    </section>
+
 </body>
 </html>
