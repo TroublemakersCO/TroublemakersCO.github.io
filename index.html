@@ -62,22 +62,22 @@
             color: #ffd700;
         }
 
-        /* CONTENEDOR PARA CENTRAR EL h1 */
+        /* HERO SECTION */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh; /* 100% de la altura de la pantalla */
+            height: 100vh; /* Pantalla completa */
             width: 100%;
             text-align: center;
         }
 
         h1 {
             font-family: 'ElGrande', sans-serif;
-            font-size: 10em; /* Aun mas grande */
+            font-size: 10em; /* Muy grande */
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            margin: 0; /* Quitamos margin para que este realmente centrado */
+            margin: 0;
             opacity: 0;
             transform: scale(0.8);
             animation: fadeInZoom 1s ease-out forwards;
@@ -100,7 +100,7 @@
 
         section {
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             padding: 50px;
             box-sizing: border-box;
             background-color: rgba(0, 0, 0, 0.7);
@@ -125,25 +125,34 @@
 
     <div class="navbar" id="navbar">
         <a href="#inicio">Inicio</a>
-        <a href="#comprar">Comprar</a>
         <a href="#reglas">Reglas</a>
+        <a href="#comprar">Comprar</a>
     </div>
 
-    <div class="hero" id="inicio">
+    <!-- HERO SECTION -->
+    <div class="hero">
         <h1>
             <span class="sapo">Sapo</span><span class="perro">Perro</span>
         </h1>
     </div>
 
-    <section id="comprar">
-        <h2>Comprar</h2>
-        <p>Aquí puedes encontrar productos para comprar.</p>
+    <!-- INICIO -->
+    <section id="inicio">
+        <h2>Inicio</h2>
+        <p>Bienvenido a la sección de inicio.</p>
     </section>
 
+    <!-- REGLAS -->
     <section id="reglas">
         <h2>Reglas</h2>
         <p>Consulta las reglas haciendo clic en el siguiente enlace:</p>
         <a href="https://troublemakers.com/Reglas" class="link-reglas" target="_blank">Ver Reglas en Troublemakers</a>
+    </section>
+
+    <!-- COMPRAR -->
+    <section id="comprar">
+        <h2>Comprar</h2>
+        <p>Aquí puedes encontrar productos para comprar.</p>
     </section>
 
     <script>
