@@ -29,31 +29,42 @@
 
         .navbar {
             position: fixed;
-            top: 20px;
-            right: 30px;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 30px;
+            background-color: transparent;
+            transition: background-color 0.5s, box-shadow 0.5s;
             z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         .navbar a {
             text-decoration: none;
             color: white;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.3);
             padding: 10px 20px;
             margin-left: 10px;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .navbar a:hover {
             background-color: rgba(255, 255, 255, 0.3);
+            color: #ffd700;
         }
 
         h1 {
             font-family: 'ElGrande', sans-serif;
             font-size: 4em;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            margin-top: 100px; /* deja espacio para el navbar */
+            margin-top: 120px;
             text-align: center;
         }
 
@@ -73,7 +84,7 @@
 </head>
 <body>
 
-    <div class="navbar">
+    <div class="navbar" id="navbar">
         <a href="#inicio">Inicio</a>
         <a href="#comprar">Comprar</a>
         <a href="#reglas">Reglas</a>
@@ -95,6 +106,18 @@
         <h2>Reglas</h2>
         <p>Consulta las reglas aquí.</p>
     </section>
+
+    <script>
+        // Script para cambiar el fondo del navbar al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 
 </body>
 </html>
