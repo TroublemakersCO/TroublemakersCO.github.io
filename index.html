@@ -71,6 +71,14 @@
             animation: fadeInZoom 1s ease-out forwards;
         }
 
+        h1 span.sapo {
+            color: #d37137ff;
+        }
+
+        h1 span.perro {
+            color: #91589aff;
+        }
+
         @keyframes fadeInZoom {
             to {
                 opacity: 1;
@@ -90,6 +98,12 @@
             justify-content: center;
             text-align: center;
         }
+
+        .link-reglas {
+            color: #ffcc00;
+            text-decoration: underline;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -100,7 +114,7 @@
         <a href="#reglas">Reglas</a>
     </div>
     
-    <h1>SapoPerro</h1> <!-- Aquí está el título con fuente ElGrande y animación -->
+    <h1><span class="sapo">Sapo</span><span class="perro">Perro</span></h1>
 
     <section id="inicio">
         <h2>Inicio</h2>
@@ -114,7 +128,7 @@
 
     <section id="reglas">
         <h2>Reglas</h2>
-        <p>Consulta las reglas aquí.</p>
+        <p>Consulta las reglas haciendo clic <a href="https://troublemakers.com/Reglas" class="link-reglas" target="_blank">aquí</a>.</p>
     </section>
 
     <script>
