@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>SapoPerro</title> <!-- Cambié el título de la pestaña también -->
+    <title>SapoPerro</title> <!-- Cambié correctamente el título -->
     <style>
         @font-face {
             font-family: 'ElGrande';
@@ -66,6 +66,16 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
             margin-top: 120px;
             text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInZoom 1s ease-out forwards;
+        }
+
+        @keyframes fadeInZoom {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         section {
@@ -90,7 +100,7 @@
         <a href="#reglas">Reglas</a>
     </div>
     
-    <h1>SapoPerro</h1> <!-- Aquí cambié el título en la página -->
+    <h1>SapoPerro</h1> <!-- Aquí está el título con fuente ElGrande y animación -->
 
     <section id="inicio">
         <h2>Inicio</h2>
