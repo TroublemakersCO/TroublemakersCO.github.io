@@ -10,25 +10,28 @@
             font-weight: normal;
             font-style: normal;
         }
+        html {
+            scroll-behavior: smooth; /* Scroll suave */
+        }
         body {
             margin: 0;
             padding: 0;
             background-image: url('./Background/Wallpaper.png'); 
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            min-height: 100vh;
             font-family: 'Arial', sans-serif;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
         .navbar {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 30px;
+            z-index: 1000;
         }
 
         .navbar a {
@@ -47,14 +50,24 @@
         }
 
         h1 {
+            font-family: 'ElGrande', sans-serif;
             font-size: 4em;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            margin-top: 100px; /* deja espacio para el navbar */
+            text-align: center;
         }
 
         section {
+            width: 100%;
             height: 100vh;
             padding: 50px;
+            box-sizing: border-box;
             background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
     </style>
 </head>
@@ -66,7 +79,7 @@
         <a href="#reglas">Reglas</a>
     </div>
     
-    <h1 font-family: 'ElGrande', sans-serif>Mi Página Web</h1>
+    <h1>Mi Página Web</h1>
 
     <section id="inicio">
         <h2>Inicio</h2>
