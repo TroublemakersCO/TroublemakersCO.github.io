@@ -10,9 +10,11 @@
             font-weight: normal;
             font-style: normal;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -71,12 +73,12 @@
             animation: fadeInZoom 1s ease-out forwards;
         }
 
-        h1 span.sapo {
-            color: #d37137ff;
+        h1 .sapo {
+            color: #d37137;
         }
 
-        h1 span.perro {
-            color: #91589aff;
+        h1 .perro {
+            color: #91589a;
         }
 
         @keyframes fadeInZoom {
@@ -99,10 +101,14 @@
             text-align: center;
         }
 
+        /* Estilo especial para el link de reglas */
         .link-reglas {
-            color: #ffcc00;
+            color: #00ffff;
+            font-size: 1.2em;
             text-decoration: underline;
             font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -114,7 +120,9 @@
         <a href="#reglas">Reglas</a>
     </div>
     
-    <h1><span class="sapo">Sapo</span><span class="perro">Perro</span></h1>
+    <h1>
+        <span class="sapo">Sapo</span><span class="perro">Perro</span>
+    </h1>
 
     <section id="inicio">
         <h2>Inicio</h2>
@@ -128,7 +136,8 @@
 
     <section id="reglas">
         <h2>Reglas</h2>
-        <p>Consulta las reglas haciendo clic <a href="https://troublemakers.com/Reglas" class="link-reglas" target="_blank">aquí</a>.</p>
+        <p>Consulta las reglas haciendo clic en el siguiente enlace:</p>
+        <a href="https://troublemakers.com/Reglas" class="link-reglas" target="_blank">Ver Reglas en Troublemakers</a>
     </section>
 
     <script>
