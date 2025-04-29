@@ -1,222 +1,241 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Troublemakers</title>
-    <style>
-        @font-face {
-            font-family: 'ElGrande';
-            src: url('./Fonts/ElGrande Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Troublemakers</title>
+  <style>
+    @font-face {
+      font-family: 'ElGrande';
+      src: url('./Fonts/ElGrande Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: url('./Background/Test.png') no-repeat center center fixed;
-            background-size: cover;
-            min-height: 100vh;
-            color: white;
-            display: flex;
-            flex-direction: column;
-        }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('./Background/Test.png') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
 
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 15px 20px;
-            background-color: transparent;
-            transition: background-color 0.5s, box-shadow 0.5s;
-            z-index: 1000;
-        }
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px 20px;
+      background-color: transparent;
+      transition: background-color 0.5s, box-shadow 0.5s;
+      z-index: 1000;
+    }
 
-        .navbar.scrolled {
-            background-color: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-        }
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
 
-        .navbar a {
-            text-decoration: none;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    .navbar a,
+    .link-reglas {
+      text-decoration: none;
+      color: white; /* Siempre blanco */
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
 
-        .navbar a:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            color: #ffd700;
-        }
+    .navbar a:hover,
+    .link-reglas:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: white; /* Sigue siendo blanco al pasar el mouse */
+    }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-        h1 {
-            font-family: 'ElGrande', sans-serif;
-            font-size: 8em;
-            animation: fadeInZoom 1s ease-out forwards;
-            color: white;
-            text-align: center;
-        }
+    h1 {
+      font-family: 'ElGrande', sans-serif;
+      font-size: 8em;
+      animation: fadeInZoom 1s ease-out forwards;
+      color: white;
+      text-align: center;
+    }
 
-        /* Secciones */
-        section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 50px 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            text-align: center;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
+    /* Secciones */
+    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 50px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      font-size: 1.3rem;
+    }
 
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        .link-reglas {
-            margin-top: 20px;
-            color: #00ffff;
-            font-weight: bold;
-            font-size: 1.2em;
-            text-decoration: underline;
-        }
+    section h2 {
+      margin-bottom: 2em;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
-        }
+    section p {
+      max-width: 800px;
+      line-height: 1.6;
+    }
 
-        /* Responsivo */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 4em;
-            }
+    /* Estilo para los emojis */
+    .link-reglas .emoji {
+      margin-left: 5px;
+      font-size: 1.2em;
+    }
 
-            .navbar {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
 
-            .navbar a {
-                font-size: 0.9em;
-                padding: 8px 12px;
-            }
+    /* Responsivo */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 4em;
+      }
 
-            section {
-                padding: 30px 15px;
-            }
-        }
+      .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
 
-        @keyframes fadeInZoom {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    </style>
+      .navbar a {
+        font-size: 0.9em;
+        padding: 8px 12px;
+      }
+
+      section {
+        padding: 30px 15px;
+      }
+
+      section p {
+        max-width: 90%;
+        font-size: 1.1rem;
+      }
+    }
+
+    @keyframes fadeInZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <nav class="navbar" id="navbar">
-        <a href="#inicio">Inicio</a>
-        <a href="#reglas">Reglas</a>
-        <a href="#tienda">Tienda</a>
-    </nav>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+    <a href="#inicio">Inicio</a>
+    <a href="#reglas">Reglas</a>
+    <a href="#tienda">Tienda</a>
+  </nav>
 
-    <header class="hero" id="hero">
-        <h1>SapoPerro</h1>
-    </header>
+  <header class="hero" id="hero">
+    <h1>SapoPerro</h1>
+  </header>
 
-    <section id="inicio">
-        <h2>Inicio</h2>
-        <p>Bienvenido a SapoPerro by Troublemakers. Aqui podras encontrar nuestros productos y mucha diversion! Nos enfocamos en experiencias para todos, para aquellos que compiten por la victoria, aquellos que solo buscan pasar un rato agradable o incluso esas personas que buscan darle un toque picante a cualquier evento</p>
-    </section>
+  <section id="inicio">
+    <h2>Inicio</h2>
+    <p>Bienvenido a SapoPerro by Troublemakers. Aquí podrás encontrar nuestros productos y mucha diversión. Nos enfocamos en experiencias para todos: para aquellos que compiten por la victoria, quienes buscan pasar un rato agradable o quienes desean darle un toque picante a cualquier evento.</p>
+  </section>
 
-    <section id="reglas">
-        <h2>Reglas</h2>
-        <p>Cansado de siempre hacer lo mismo? No te preocupes tenemos la solucion:</p>
-        <a href="https://troublemakersco.com/reglas" class="link-reglas" target="_blank">Ver Reglas</a>
-    </section>
+  <section id="reglas">
+    <h2>Reglas</h2>
+    <p>¿Cansado de siempre hacer lo mismo? No te preocupes, tenemos la solución:</p>
+    <a href="https://troublemakersco.com/reglas" class="link-reglas" target="_blank" rel="noopener noreferrer">
+      Ver Mas <span class="emoji">📜</span>
+    </a>
+  </section>
 
-    <section id="tienda">
-        <h2>Tienda</h2>
-        <p>Aquí puedes encontrar nuestros productos al mejor precio!.</p>
-        <a href="https://mercadolibre.com" class="link-reglas" target="_blank">Tienda</a>
-    </section>
+  <section id="tienda">
+    <h2>Tienda</h2>
+    <p>Aquí puedes encontrar nuestros productos al mejor precio.</p>
+    <a href="https://mercadolibre.com" class="link-reglas" target="_blank" rel="noopener noreferrer">
+      Ver Mas <span class="emoji">🛒</span>
+    </a>
+  </section>
 
-    <footer>
-        &copy; 2025 TroubleMakers. Todos los derechos reservados.
-    </footer>
+  <footer>
+    &copy; 2025 TroubleMakers. Todos los derechos reservados.
+  </footer>
 
-    <script>
-        // Navbar cambio color al hacer scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+  <script>
+    // Navbar cambio color al hacer scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
 
-        // Animacion suave de secciones al hacer scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.3
-        });
+    // Animación de secciones al hacer scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
 
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
