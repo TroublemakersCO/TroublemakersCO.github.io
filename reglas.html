@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reglas</title>
+    <title>Reglas de SapoPerro | TroubleMakers</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,7 +14,9 @@
         }
 
         header {
-            background-image: url('./Background/Test.png'); 
+            background-image: url('./Background/Test.png');
+            background-size: cover;
+            background-position: center;
             padding: 20px;
             text-align: center;
             color: white;
@@ -49,9 +52,10 @@
             font-size: 28px;
             border-bottom: 2px solid #ccc;
             padding-bottom: 10px;
+            text-align: center; /* Solo los h2 estarán centrados */
         }
 
-        section p {
+        section p, section ul, section li {
             font-size: 18px;
             color: #555;
             line-height: 1.6;
@@ -62,9 +66,6 @@
         }
 
         section li {
-            font-size: 18px;
-            color: #555;
-            line-height: 1.6;
             margin-bottom: 10px;
         }
 
@@ -82,15 +83,15 @@
     <header>
         <h1>Reglas de SapoPerro</h1>
         <nav>
-            <a href="/">Inicio</a>
-            <a href="/reglas.html">Reglas</a>
-            <a href="https://mercadolibre.com">Comprar</a>
+            <a href="/" aria-label="Ir al Inicio">Inicio</a>
+            <a href="/reglas.html" aria-label="Ver Reglas del Juego">Reglas</a>
+            <a href="https://mercadolibre.com" aria-label="Comprar en MercadoLibre">Comprar</a>
         </nav>
     </header>
 
     <main>
         <section id="competitivo">
-            <h2>Competitivo</h2>
+            <h2>Competitivo ⚔️</h2>
             <p>
                 En esta modalidad, los jugadores deben seguir estrictamente las reglas establecidas.
                 No se permiten cambios improvisados ni reglas caseras. Cada partida será controlada
@@ -98,28 +99,31 @@
                 la máxima competitividad y equidad entre participantes.
             </p>
 
-            <h4>Antes de jugar:</h4>
+            <h3>Antes de jugar:</h3>
             <ul>
                 <li>Se reparten 3 cartas a cada jugador.</li>
                 <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
                 <li>El resto del mazo queda en el centro de la mesa.</li>
                 <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
             </ul>
-            <h4>Inicio de juego:</h4>
+
+            <h3>Inicio de juego:</h3>
             <ul>
                 <li>Empieza quien tenga la carta más baja.</li>
             </ul>
-            <h4>Turnos:</h4>
+
+            <h3>Turnos:</h3>
             <ul>
                 <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
                 <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
                 <li>La carta jugada debe ser igual o mayor que la anterior.</li>
                 <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
-                <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas</li>
-		<li>Una vez no hayan cartas destapadas toma todas tus cartas tapadas y muestralas a los demas luego ponlas en tu mano</li>
+                <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas.</li>
+                <li>Cuando ya no tengas cartas destapadas, toma todas tus cartas tapadas, muéstralas a los demás jugadores y luego ponlas en tu mano.</li>
                 <li>Gana quien se quede primero sin cartas.</li>
             </ul>
-            <h4>Cartas Especiales:</h4>
+
+            <h3>Cartas Especiales:</h3>
             <ul>
                 <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
                 <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
@@ -131,22 +135,25 @@
         </section>
 
         <section id="casual">
-            <h2>Casual</h2>
+            <h2>Casual 😎</h2>
             <p>
                 El enfoque casual permite a los jugadores ser más flexibles con las reglas. Es ideal para quienes desean disfrutar del juego sin presiones, permitiendo adaptaciones y acuerdos entre jugadores siempre que todos estén de acuerdo. ¡Aquí lo importante es la diversión!
             </p>
-            <h4>Antes de jugar:</h4>
+
+            <h3>Antes de jugar:</h3>
             <ul>
                 <li>Se reparten 3 cartas a cada jugador.</li>
                 <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
                 <li>El resto del mazo queda en el centro de la mesa.</li>
                 <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
             </ul>
-            <h4>Inicio de juego:</h4>
+
+            <h3>Inicio de juego:</h3>
             <ul>
                 <li>Empieza quien tenga la carta más baja.</li>
             </ul>
-            <h4>Turnos:</h4>
+
+            <h3>Turnos:</h3>
             <ul>
                 <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
                 <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
@@ -155,7 +162,8 @@
                 <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas y luego las tapadas.</li>
                 <li>Gana quien se quede primero sin cartas.</li>
             </ul>
-            <h4>Cartas Especiales:</h4>
+
+            <h3>Cartas Especiales:</h3>
             <ul>
                 <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
                 <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
@@ -167,17 +175,18 @@
         </section>
 
         <section id="para-tomar">
-            <h2>Para Tomar (+18)</h2>
+            <h2>Para Tomar 🍻🔞</h2>
             <p>
                 Esta versión está diseñada para combinar el juego con dinámicas de bebidas.
                 Cada error o incumplimiento de regla puede convertirse en una oportunidad para un trago.
                 Se recomienda beber con responsabilidad y asegurarse de que todos los participantes 
                 estén de acuerdo con la dinámica antes de iniciar.
             </p>
+
             <h3>Reglas Especiales Para Tomar:</h3>
             <ul>
                 <li><strong>Centro:</strong> Cada vez que un jugador se lleva las cartas del centro, debe tomar.</li>
-                <li><strong>Sapo:</strong> Al jugar un Sapo, esa persona debe escoger a otra persona para que tome.</li>
+                <li><strong>Sapo:</strong> Al jugar un Sapo, esa persona debe escoger a otra para que tome.</li>
                 <li><strong>Perro:</strong> Al sacar un Perro, elige a alguien como tu "perro". Cada vez que tú tomes, tu "perro" también debe tomar.</li>
                 <li><strong>Menor:</strong> Cuando salga una carta Menor, todos deben mostrar su carta más alta. El que tenga la más baja debe tomar (poderes cuentan como 1; si hay empate, todos los empatados toman).</li>
                 <li><strong>Fuego:</strong> Al jugar una carta Fuego, el jugador puede crear una regla especial que todos deben seguir hasta que otro Fuego sea jugado.</li>
