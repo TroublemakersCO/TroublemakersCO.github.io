@@ -1,140 +1,198 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reglas de SapoPerro | TroubleMakers</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reglas de SapoPerro | TroubleMakers</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
 
-        header {
-            background-image: url('./Background/Test.png');
-            background-size: cover;
-            background-position: center;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
+    header {
+      background-image: url('./Background/Test.png');
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      margin-bottom: 0;
+    }
 
-        nav {
-            margin-top: 10px;
-        }
+    nav {
+      margin-top: 10px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-        main {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+    main {
+      padding: 0;
+      max-width: 100%;
+      margin: 0;
+    }
 
-        section {
-            margin-bottom: 50px;
-        }
+    section {
+      padding: 60px 20px; /* Más espacio interno */
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+      min-height: 100vh; /* Cada sección ocupa al menos toda la pantalla */
+    }
 
-        section h2 {
-            color: #333;
-            font-size: 28px;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
-            text-align: center; /* Solo los h2 estarán centrados */
-        }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        section p, section ul, section li {
-            font-size: 18px;
-            color: #555;
-            line-height: 1.6;
-        }
+    section h2 {
+      color: #333;
+      font-size: 28px;
+      padding-bottom: 10px;
+      text-align: center;
+      border-bottom: 2px solid #ccc;
+    }
 
-        section ul {
-            padding-left: 20px;
-        }
+    section p, section ul, section li {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+    }
 
-        section li {
-            margin-bottom: 10px;
-        }
+    section ul {
+      padding-left: 20px;
+    }
 
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 50px;
-        }
-    </style>
+    section li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 0;
+    }
+
+    /* Fondos especiales y texto blanco */
+
+    .full-width {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+
+    .competitivo-background {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./Background/Competitivo.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+    }
+
+    .casual-background {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./Background/Casual.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+    }
+
+    .para-tomar-background {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./Background/Para tomar.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+    }
+
+    /* Estilos específicos para textos blancos */
+    .competitivo-background h2,
+    .casual-background h2,
+    .para-tomar-background h2 {
+      color: white;
+      border-bottom: none;
+    }
+
+    .competitivo-background p,
+    .competitivo-background ul,
+    .competitivo-background li,
+    .competitivo-background h3,
+    .casual-background p,
+    .casual-background ul,
+    .casual-background li,
+    .casual-background h3,
+    .para-tomar-background p,
+    .para-tomar-background ul,
+    .para-tomar-background li,
+    .para-tomar-background h3 {
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Reglas de SapoPerro</h1>
-        <nav>
-            <a href="/" aria-label="Ir al Inicio">Inicio</a>
-            <a href="/reglas.html" aria-label="Ver Reglas del Juego">Reglas</a>
-            <a href="https://mercadolibre.com" aria-label="Comprar en MercadoLibre">Comprar</a>
-        </nav>
-    </header>
+<header>
+  <h1>Reglas de SapoPerro</h1>
+  <nav>
+    <a href="/" aria-label="Ir al Inicio">Inicio</a>
+    <a href="/reglas.html" aria-label="Ver Reglas del Juego">Reglas</a>
+    <a href="https://mercadolibre.com" aria-label="Comprar en MercadoLibre">Comprar</a>
+  </nav>
+</header>
 
-    <main>
-        <section id="competitivo">
-            <h2>Competitivo ⚔️</h2>
-            <p>
-                En esta modalidad, los jugadores deben seguir estrictamente las reglas establecidas.
-                No se permiten cambios improvisados ni reglas caseras. Cada partida será controlada
-                por un moderador que velará por el cumplimiento de las normas para garantizar
-                la máxima competitividad y equidad entre participantes.
-            </p>
+<main>
+  <section id="competitivo" class="competitivo-background full-width">
+    <h2>Competitivo ⚔️</h2>
+    <p>En esta modalidad, los jugadores deben seguir estrictamente las reglas establecidas...</p>
 
-            <h3>Antes de jugar:</h3>
-            <ul>
-                <li>Se reparten 3 cartas a cada jugador.</li>
-                <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
-                <li>El resto del mazo queda en el centro de la mesa.</li>
-                <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
-            </ul>
+    <h3>Antes de jugar:</h3>
+    <ul>
+      <li>Se reparten 3 cartas a cada jugador.</li>
+      <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
+      <li>El resto del mazo queda en el centro de la mesa.</li>
+      <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
+    </ul>
 
-            <h3>Inicio de juego:</h3>
-            <ul>
-                <li>Empieza quien tenga la carta más baja.</li>
-            </ul>
+    <h3>Inicio de juego:</h3>
+    <ul>
+      <li>Empieza quien tenga la carta más baja.</li>
+    </ul>
 
-            <h3>Turnos:</h3>
-            <ul>
-                <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
-                <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
-                <li>La carta jugada debe ser igual o mayor que la anterior.</li>
-                <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
-                <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas.</li>
-                <li>Cuando ya no tengas cartas destapadas, toma todas tus cartas tapadas, muéstralas a los demás jugadores y luego ponlas en tu mano.</li>
-                <li>Gana quien se quede primero sin cartas.</li>
-            </ul>
+    <h3>Turnos:</h3>
+    <ul>
+      <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
+      <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
+      <li>La carta jugada debe ser igual o mayor que la anterior.</li>
+      <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
+      <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas y luego las tapadas.</li>
+      <li>Gana quien se quede primero sin cartas.</li>
+    </ul>
 
-            <h3>Cartas Especiales:</h3>
-            <ul>
-                <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
-                <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
-                <li><strong>Sapo:</strong> El siguiente jugador debe poner una carta morada.</li>
-                <li><strong>Perro:</strong> El siguiente jugador debe poner una carta naranja.</li>
-                <li><strong>Sapo Perro:</strong> Copia la carta jugada antes.</li>
-            </ul>
-            <p><em>Nota:</em> No puedes responder una carta especial con otra, excepto "Sapo" y "Perro" respetando el color.</p>
-        </section>
+    <h3>Cartas Especiales:</h3>
+    <ul>
+      <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
+      <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
+      <li><strong>Sapo:</strong> El siguiente jugador debe poner una carta morada.</li>
+      <li><strong>Perro:</strong> El siguiente jugador debe poner una carta naranja.</li>
+      <li><strong>Sapo Perro:</strong> Copia la carta jugada antes.</li>
+    </ul>
+    <p><em>Nota:</em> No puedes responder una carta especial con otra, excepto "Sapo" y "Perro" respetando el color.</p>
+  </section>
 
-        <section id="casual">
+  <section id="casual" class="casual-background full-width">
             <h2>Casual 😎</h2>
             <p>
                 El enfoque casual permite a los jugadores ser más flexibles con las reglas. Es ideal para quienes desean disfrutar del juego sin presiones, permitiendo adaptaciones y acuerdos entre jugadores siempre que todos estén de acuerdo. ¡Aquí lo importante es la diversión!
@@ -174,7 +232,7 @@
             <p><em>Nota:</em> No puedes responder una carta especial con otra, excepto "Sapo" y "Perro" respetando el color.</p>
         </section>
 
-        <section id="para-tomar">
+  <section id="para-tomar" class="para-tomar-background full-width">
             <h2>Para Tomar 🍻🔞</h2>
             <p>
                 Esta versión está diseñada para combinar el juego con dinámicas de bebidas.
@@ -193,11 +251,30 @@
                 <li><strong>Sapo Perro:</strong> Al jugar un Sapo Perro, el jugador elige un minijuego (como "Yo nunca nunca" o "Cultura Chupística"). El perdedor debe tomar.</li>
             </ul>
         </section>
-    </main>
+</main>
 
-    <footer>
-        &copy; 2025 TroubleMakers. Todos los derechos reservados.
-    </footer>
+<footer>
+  &copy; 2025 TroubleMakers. Todos los derechos reservados.
+</footer>
+
+<!-- Script para fade-in -->
+<script>
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
