@@ -1,36 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reglas de SapoPerro | TroubleMakers</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TroubleMakers</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-    body {
+    @font-face {
+  font-family: 'ElGrande';
+  src: url('./Fonts/ElGrande Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f5f5f5;
     }
 
-    header {
-      background-image: url('./Background/Test.png');
+    .navbar-header {
+      box-shadow: none;
+      position: relative;
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url('./Background/Test.png');
       background-size: cover;
       background-position: center;
-      padding: 20px;
-      text-align: center;
+      width: 100vw;
       color: white;
-    }
-
-    nav {
-      margin-top: 10px;
+      padding-top: 100px;
+      padding-bottom: 40px;
+      text-align: center;
+      box-sizing: border-box;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
-      gap: 10px;
+      align-items: center;
     }
 
-    nav a {
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+      background-color: transparent;
+      transition: background-color 0.5s, box-shadow 0.5s;
+      box-shadow: none;
+      z-index: 1000;
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar a {
       color: white;
       text-decoration: none;
       margin: 0 10px;
@@ -39,8 +73,27 @@
       background-color: rgba(0, 0, 0, 0.3);
       border-radius: 5px;
     }
+.navbar a {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+}
 
-    nav a:hover {
+
+
+
+
+
+
+
+    .navbar a:hover {
       text-decoration: underline;
     }
 
@@ -109,21 +162,36 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url('./Background/Competitivo.png');
       color: white;
-      background-blend-mode: overlay;
-      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .competitivo-background {
-      background-image: url('./Background/Competitivo.png');
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url('./Background/Competitivo.png');
     }
 
     .casual-background {
-      background-image: url('./Background/Casual.png');
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url('./Background/Casual.png');
     }
 
     .para-tomar-background {
-      background-image: url('./Background/Para tomar.png');
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url('./Background/Para tomar.png');
     }
 
     .competitivo-background h2,
@@ -147,159 +215,154 @@
     .para-tomar-background h3 {
       color: white;
     }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-      }
-
-      nav a {
-        font-size: 0.95rem;
-      }
-
-      section {
-        padding: 40px 15px;
-      }
-
-      section p,
-      section li {
-        font-size: 0.95rem;
-      }
-
-      section h2 {
-        font-size: 1.6rem;
-      }
+  
+    .navbar.scrolled {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
 
-    @media (max-width: 480px) {
-      nav a {
-        font-size: 0.9rem;
-        padding: 6px 8px;
-      }
-
-      section {
-        padding: 30px 10px;
-      }
-
-      section h2 {
-        font-size: 1.4rem;
-      }
-
-      section h3 {
-        font-size: 1.1rem;
-      }
-
-      section p,
-      section li {
-        font-size: 0.9rem;
-      }
-    }
   </style>
 </head>
 <body>
-<header>
-  <h1>Reglas de SapoPerro</h1>
-  <nav>
-    <a href="/">Inicio</a>
-    <a href="/reglas.html">Reglas</a>
-    <a href="https://mercadolibre.com" target="_blank">Comprar</a>
-  </nav>
-</header>
-<main>
-  <section id="competitivo" class="competitivo-background full-width">
-    <h2>Competitivo ⚔️</h2>
-    <p>En esta modalidad, los jugadores deben seguir estrictamente las reglas establecidas...</p>
-    <h3>Antes de jugar:</h3>
-    <ul>
-      <li>Se reparten 3 cartas a cada jugador.</li>
-      <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
-      <li>El resto del mazo queda en el centro de la mesa.</li>
-      <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
-    </ul>
-    <h3>Inicio de juego:</h3>
-    <ul>
-      <li>Empieza quien tenga la carta más baja.</li>
-    </ul>
-    <h3>Turnos:</h3>
-    <ul>
-      <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
-      <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
-      <li>La carta jugada debe ser igual o mayor que la anterior.</li>
-      <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
-      <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas y luego las tapadas.</li>
-      <li>Gana quien se quede primero sin cartas.</li>
-    </ul>
-    <h3>Cartas Especiales:</h3>
-    <ul>
-      <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
-      <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
-      <li><strong>Sapo:</strong> El siguiente jugador debe poner una carta morada.</li>
-      <li><strong>Perro:</strong> El siguiente jugador debe poner una carta naranja.</li>
-      <li><strong>Sapo Perro:</strong> Copia la carta jugada antes.</li>
-    </ul>
-    <p><em>Nota:</em> No puedes responder una carta especial con otra, excepto "Sapo" y "Perro" respetando el color.</p>
-  </section>
-  <section id="casual" class="casual-background full-width">
-    <h2>Casual 😎</h2>
-    <p>El enfoque casual permite a los jugadores ser más flexibles con las reglas...</p>
-    <h3>Antes de jugar:</h3>
-    <ul>
-      <li>Se reparten 3 cartas a cada jugador.</li>
-      <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
-      <li>El resto del mazo queda en el centro de la mesa.</li>
-      <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
-    </ul>
-    <h3>Inicio de juego:</h3>
-    <ul>
-      <li>Empieza quien tenga la carta más baja.</li>
-    </ul>
-    <h3>Turnos:</h3>
-    <ul>
-      <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
-      <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
-      <li>La carta jugada debe ser igual o mayor que la anterior.</li>
-      <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
-      <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas y luego las tapadas.</li>
-      <li>Gana quien se quede primero sin cartas.</li>
-    </ul>
-    <h3>Cartas Especiales:</h3>
-    <ul>
-      <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
-      <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
-      <li><strong>Sapo:</strong> El siguiente jugador debe poner una carta morada.</li>
-      <li><strong>Perro:</strong> El siguiente jugador debe poner una carta naranja.</li>
-      <li><strong>Sapo Perro:</strong> Copia la carta jugada antes.</li>
-    </ul>
-    <p><em>Nota:</em> No puedes responder una carta especial con otra, excepto "Sapo" y "Perro" respetando el color.</p>
-  </section>
-  <section id="para-tomar" class="para-tomar-background full-width">
-    <h2>Para Tomar 🍻🔞</h2>
-    <p>Esta versión está diseñada para combinar el juego con dinámicas de bebidas...</p>
-    <h3>Reglas Especiales Para Tomar:</h3>
-    <ul>
-      <li><strong>Centro:</strong> Cada vez que un jugador se lleva las cartas del centro, debe tomar.</li>
-      <li><strong>Sapo:</strong> Al jugar un Sapo, esa persona debe escoger a otra para que tome.</li>
-      <li><strong>Perro:</strong> Al sacar un Perro, elige a alguien como tu "perro". Cada vez que tú tomes, tu "perro" también debe tomar.</li>
-      <li><strong>Menor:</strong> Cuando salga una carta Menor, todos deben mostrar su carta más alta. El que tenga la más baja debe tomar.</li>
-      <li><strong>Fuego:</strong> Al jugar una carta Fuego, el jugador puede crear una regla especial que todos deben seguir hasta que otro Fuego sea jugado.</li>
-      <li><strong>Sapo Perro:</strong> Al jugar un Sapo Perro, el jugador elige un minijuego. El perdedor debe tomar.</li>
-    </ul>
-  </section>
-</main>
-<footer>
-  &copy; 2025 TroubleMakers. Todos los derechos reservados.
-</footer>
-<script>
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('show');
-    });
-  }, { threshold: 0.1 });
+  <header class="navbar-header">
+    <h1>Reglas de SapoPerro</h1>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+      <a href="/">Inicio</a>
+      <a href="/reglas.html">Reglas</a>
+      <a href="https://mercadolibre.com" target="_blank">Comprar</a>
+    </nav>
+  </header>
 
-  sections.forEach(section => observer.observe(section));
-</script>
+  <main>
+    <section id="competitivo" class="competitivo-background full-width">
+      <h2>Competitivo ⚔️</h2>
+      <p>En esta modalidad, los jugadores deben seguir estrictamente las reglas establecidas...</p>
+      <h3>Antes de jugar:</h3>
+      <ul>
+        <li>Se reparten 3 cartas a cada jugador.</li>
+        <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
+        <li>El resto del mazo queda en el centro de la mesa.</li>
+        <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
+      </ul>
+      <h3>Inicio de juego:</h3>
+      <ul>
+        <li>Empieza quien tenga la carta más baja.</li>
+      </ul>
+      <h3>Turnos:</h3>
+      <ul>
+        <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
+        <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
+        <li>La carta jugada debe ser igual o mayor que la anterior.</li>
+        <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
+        <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas y luego las tapadas.</li>
+        <li>Gana quien se quede primero sin cartas.</li>
+      </ul>
+      <h3>Cartas Especiales:</h3>
+      <ul>
+        <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
+        <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
+        <li><strong>Sapo:</strong> El siguiente jugador debe poner una carta morada.</li>
+        <li><strong>Perro:</strong> El siguiente jugador debe poner una carta naranja.</li>
+        <li><strong>ElGrande:</strong> Copia la carta jugada antes.</li>
+      </ul>
+      <p><em>Nota:</em> No puedes responder una carta especial con otra, excepto "Sapo" y "Perro" respetando el color.</p>
+    </section>
+
+    <section id="casual" class="casual-background full-width">
+      <h2>Casual 😎</h2>
+      <p>El enfoque casual permite a los jugadores ser más flexibles con las reglas...</p>
+      
+      <h3>Antes de jugar:</h3>
+      <ul>
+        <li>Se reparten 3 cartas a cada jugador.</li>
+        <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
+        <li>El resto del mazo queda en el centro de la mesa.</li>
+        <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
+      </ul>
+      <h3>Inicio de juego:</h3>
+      <ul>
+        <li>Empieza quien tenga la carta más baja.</li>
+      </ul>
+      <h3>Turnos:</h3>
+      <ul>
+        <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
+        <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
+        <li>La carta jugada debe ser igual o mayor que la anterior.</li>
+        <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
+        <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas y luego las tapadas.</li>
+        <li>Gana quien se quede primero sin cartas.</li>
+      </ul>
+      <h3>Cartas Especiales:</h3>
+      <ul>
+        <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
+        <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
+        <li><strong>Sapo:</strong> El siguiente jugador debe poner una carta morada.</li>
+        <li><strong>Perro:</strong> El siguiente jugador debe poner una carta naranja.</li>
+        <li><strong>ElGrande:</strong> Copia la carta jugada antes.</li>
+      </ul>
+      <p><em>Nota:</em> No puedes responder una carta especial con otra, excepto "Sapo" y "Perro" respetando el color.</p>
+
+    </section>
+
+    <section id="para-tomar" class="para-tomar-background full-width">
+      <h2>Para Tomar 🍻🔞</h2>
+      <p>Esta versión está diseñada para combinar el juego con dinámicas de bebidas...</p>
+      
+      <h3>Antes de jugar:</h3>
+      <ul>
+        <li>Se reparten 3 cartas a cada jugador.</li>
+        <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
+        <li>El resto del mazo queda en el centro de la mesa.</li>
+        <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
+      </ul>
+      <h3>Inicio de juego:</h3>
+      <ul>
+        <li>Empieza quien tenga la carta más baja.</li>
+      </ul>
+      <h3>Turnos:</h3>
+      <ul>
+        <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
+        <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
+        <li>La carta jugada debe ser igual o mayor que la anterior.</li>
+        <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
+        <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas y luego las tapadas.</li>
+        <li>Gana quien se quede primero sin cartas.</li>
+      </ul>
+      <h3>Cartas Especiales:</h3>
+      <ul>
+        <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
+        <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
+        <li><strong>Sapo:</strong> El siguiente jugador debe poner una carta morada.</li>
+        <li><strong>Perro:</strong> El siguiente jugador debe poner una carta naranja.</li>
+        <li><strong>ElGrande:</strong> Copia la carta jugada antes.</li>
+      </ul>
+      <p><em>Nota:</em> No puedes responder una carta especial con otra, excepto "Sapo" y "Perro" respetando el color.</p>
+
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 TroubleMakers. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
