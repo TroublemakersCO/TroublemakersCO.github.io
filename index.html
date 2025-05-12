@@ -40,8 +40,9 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      gap: 15px;
-      padding: 15px 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
       background-color: transparent;
       transition: background-color 0.5s, box-shadow 0.5s;
       z-index: 1000;
@@ -55,22 +56,23 @@
     .navbar a,
     .link-reglas {
       text-decoration: none;
-      color: white; /* Siempre blanco */
+      color: white;
       background-color: rgba(0, 0, 0, 0.3);
-      padding: 10px 20px;
+      padding: 10px 16px;
       border-radius: 5px;
       font-weight: bold;
       font-size: 1rem;
       transition: background-color 0.3s;
+      display: inline-block;
     }
 
     .navbar a:hover,
     .link-reglas:hover {
       background-color: rgba(255, 255, 255, 0.3);
-      color: white; /* Sigue siendo blanco al pasar el mouse */
+      color: white;
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
       height: 100vh;
       display: flex;
@@ -83,7 +85,7 @@
 
     h1 {
       font-family: 'ElGrande', sans-serif;
-      font-size: 8em;
+      font-size: clamp(2.5rem, 10vw, 8rem);
       animation: fadeInZoom 1s ease-out forwards;
       color: white;
       text-align: center;
@@ -96,13 +98,13 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 50px 20px;
+      padding: 40px 20px;
       background-color: rgba(0, 0, 0, 0.7);
       text-align: center;
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s ease, transform 0.8s ease;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
     section.visible {
@@ -111,21 +113,22 @@
     }
 
     section h2 {
-      margin-bottom: 2em;
+      margin-bottom: 1em;
+      font-size: 1.8rem;
     }
 
     section p {
       max-width: 800px;
       line-height: 1.6;
+      margin-bottom: 1.5em;
+      padding: 0 10px;
     }
 
-    /* Estilo para los emojis */
     .link-reglas .emoji {
       margin-left: 5px;
       font-size: 1.2em;
     }
 
-    /* Footer */
     footer {
       background-color: #222;
       color: white;
@@ -134,29 +137,22 @@
       font-size: 0.9rem;
     }
 
-    /* Responsivo */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 4em;
-      }
-
-      .navbar {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
+    @media (max-width: 480px) {
       .navbar a {
-        font-size: 0.9em;
-        padding: 8px 12px;
+        font-size: 0.9rem;
+        padding: 8px 10px;
       }
 
       section {
-        padding: 30px 15px;
+        padding: 25px 15px;
       }
 
       section p {
-        max-width: 90%;
-        font-size: 1.1rem;
+        font-size: 1rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
       }
     }
 
@@ -194,7 +190,7 @@
     <h2>Reglas</h2>
     <p>¿Cansado de siempre hacer lo mismo? No te preocupes, tenemos la solución:</p>
     <a href="https://troublemakersco.com/reglas" class="link-reglas" target="_blank" rel="noopener noreferrer">
-      Ver Mas <span class="emoji">📜</span>
+      Ver Más <span class="emoji">📜</span>
     </a>
   </section>
 
@@ -202,7 +198,7 @@
     <h2>Tienda</h2>
     <p>Aquí puedes encontrar nuestros productos al mejor precio.</p>
     <a href="https://mercadolibre.com" class="link-reglas" target="_blank" rel="noopener noreferrer">
-      Ver Mas <span class="emoji">🛒</span>
+      Ver Más <span class="emoji">🛒</span>
     </a>
   </section>
 
@@ -211,7 +207,6 @@
   </footer>
 
   <script>
-    // Navbar cambio color al hacer scroll
     window.addEventListener('scroll', () => {
       const navbar = document.getElementById('navbar');
       if (window.scrollY > 50) {
@@ -221,7 +216,6 @@
       }
     });
 
-    // Animación de secciones al hacer scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
