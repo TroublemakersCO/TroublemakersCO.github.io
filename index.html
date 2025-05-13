@@ -39,10 +39,11 @@
       top: 0;
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      align-items: center;
       flex-wrap: wrap;
       gap: 10px;
-      padding: 10px;
+      padding: 10px 20px;
       background-color: transparent;
       transition: background-color 0.5s, box-shadow 0.5s;
       z-index: 1000;
@@ -70,6 +71,47 @@
     .link-reglas:hover {
       background-color: rgba(255, 255, 255, 0.3);
       color: white;
+    }
+
+    .icono-instagram {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .icono-instagram img {
+      width: 50px;
+      height: 30px;
+      background: transparent;
+      transition: opacity 0.3s ease;
+    }
+
+    .icono-instagram img:hover {
+      opacity: 0.7;
+    }
+
+    /* Ocultar ícono en móviles */
+    @media (max-width: 480px) {
+      .icono-instagram {
+        display: none;
+      }
+
+      .navbar a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+      }
+
+      section {
+        padding: 25px 15px;
+      }
+
+      section p {
+        font-size: 1rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
     }
 
     /* Hero */
@@ -137,25 +179,6 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 480px) {
-      .navbar a {
-        font-size: 0.9rem;
-        padding: 8px 10px;
-      }
-
-      section {
-        padding: 25px 15px;
-      }
-
-      section p {
-        font-size: 1rem;
-      }
-
-      section h2 {
-        font-size: 1.5rem;
-      }
-    }
-
     @keyframes fadeInZoom {
       from {
         opacity: 0;
@@ -175,6 +198,9 @@
     <a href="#inicio">Inicio</a>
     <a href="/reglas.html">Reglas</a>
     <a href="#tienda">Tienda</a>
+    <a href="https://instagram.com/troublemakers_co" target="_blank" rel="noopener noreferrer" class="icono-instagram">
+      <img src="./Background/Instagram.png" alt="Instagram" />
+    </a>
   </nav>
 
   <header class="hero" id="hero">
@@ -197,7 +223,7 @@
   <section id="tienda">
     <h2>Tienda</h2>
     <p>Aquí puedes encontrar nuestros productos al mejor precio.</p>
-    <a href="https://mercadolibre.com" class="link-reglas" target="_blank" rel="noopener noreferrer">
+    <a href="https://articulo.mercadolibre.com.co/MCO-1582314833-juego-de-mesa-sapoperro-_JM" class="link-reglas" target="_blank" rel="noopener noreferrer">
       Ver Más <span class="emoji">🛒</span>
     </a>
   </section>
