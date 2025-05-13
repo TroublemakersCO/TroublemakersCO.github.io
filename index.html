@@ -33,7 +33,6 @@
       flex-direction: column;
     }
 
-    /* Navbar */
     .navbar {
       position: fixed;
       top: 0;
@@ -90,7 +89,6 @@
       opacity: 0.7;
     }
 
-    /* Ocultar ícono en móviles */
     @media (max-width: 480px) {
       .icono-instagram {
         display: none;
@@ -114,7 +112,6 @@
       }
     }
 
-    /* Hero */
     .hero {
       height: 100vh;
       display: flex;
@@ -133,7 +130,6 @@
       text-align: center;
     }
 
-    /* Secciones */
     section {
       display: flex;
       flex-direction: column;
@@ -196,7 +192,7 @@
 
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
     <a href="#inicio">Inicio</a>
-    <a href="/reglas.html">Reglas</a>
+    <a href="#reglas">Reglas</a>
     <a href="#tienda">Tienda</a>
     <a href="https://instagram.com/troublemakers_co" target="_blank" rel="noopener noreferrer" class="icono-instagram">
       <img src="./Background/Instagram.png" alt="Instagram" />
@@ -215,7 +211,7 @@
   <section id="reglas">
     <h2>Reglas</h2>
     <p>¿Cansado de siempre hacer lo mismo? No te preocupes, tenemos la solución:</p>
-    <a href="/reglas.html" class="link-reglas" target="_blank" rel="noopener noreferrer">
+    <a href="#" onclick="verificarEdad()" class="link-reglas">
       Ver Más <span class="emoji">📜</span>
     </a>
   </section>
@@ -255,6 +251,15 @@
     document.querySelectorAll('section').forEach(section => {
       observer.observe(section);
     });
+
+    function verificarEdad() {
+      const mayor = confirm("¿Tienes más de 18 años?");
+      if (mayor) {
+        window.open("/reglas.html", "_blank");
+      } else {
+        alert("No puedes acceder a esta sección.");
+      }
+    }
   </script>
 
 </body>
