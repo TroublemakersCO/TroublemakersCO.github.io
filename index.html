@@ -211,7 +211,7 @@
   <section id="reglas">
     <h2>Reglas</h2>
     <p>¿Cansado de siempre hacer lo mismo? No te preocupes, tenemos la solución:</p>
-    <a href="#" onclick="verificarEdad()" class="link-reglas">
+    <a href="/reglas" class="link-reglas">
       Ver Más <span class="emoji">📜</span>
     </a>
   </section>
@@ -252,14 +252,7 @@
       observer.observe(section);
     });
 
-    function verificarEdad() {
-      const mayor = confirm("¿Tienes más de 18 años?");
-      if (mayor) {
-        window.open("/reglas", "_blank");
-      } else {
-        alert("No puedes acceder a esta sección.");
-      }
-    }
+    
   </script>
 
 </body>

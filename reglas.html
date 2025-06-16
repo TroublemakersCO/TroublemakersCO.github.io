@@ -4,345 +4,335 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TroubleMakers</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>Reglas de SapoPerro</title>
+  
+<style>
+  @font-face {
+    font-family: 'ElGrande';
+    src: url('./Fonts/ElGrande Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .navbar-header {
+    box-shadow: none;
+    position: relative;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('./Background/Test.png');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+  
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background-color: transparent;
+    transition: background-color 0.5s, box-shadow 0.5s;
+    z-index: 1000;
+  }
+  .navbar a {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+  }
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  .navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+</style>
+
   <style>
-    @font-face {
-  font-family: 'ElGrande';
-  src: url('./Fonts/ElGrande Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
+    
 body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-    }
-
-    .navbar-header {
-      box-shadow: none;
-      position: relative;
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
-        ),
-        url('./Background/Test.png');
-      background-size: cover;
-      background-position: center;
-      width: 100vw;
-      color: white;
-      padding-top: 100px;
-      padding-bottom: 40px;
-      text-align: center;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 10px;
-      background-color: transparent;
-      transition: background-color 0.5s, box-shadow 0.5s;
-      box-shadow: none;
-      z-index: 1000;
-    }
-
-    .navbar.scrolled {
-      background-color: rgba(0, 0, 0, 0.8);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 1rem;
-      padding: 6px 10px;
-      background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 5px;
-    }
-.navbar a {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('./Background/Test.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
   color: white;
-  background-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 1rem;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  border: none;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
-
-
-
-
-
-
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
 
     main {
-      padding: 0;
-      margin: 0;
-    }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+}
 
-    section {
-      padding: 50px 20px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease, transform 1s ease;
-      min-height: 100vh;
-    }
+.modo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 50px 60px;
+  max-width: 1080px;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+}
 
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.modo-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 25px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s;
+  box-sizing: border-box;
+}
+.modo-card:hover {
+  transform: scale(1.05);
+}
 
-    section h2 {
-      font-size: clamp(1.6rem, 4vw, 2rem);
-      text-align: center;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
 
-    section h3 {
-      font-size: 1.2rem;
-      margin-top: 30px;
-    }
 
-    section p,
-    section ul,
-    section li {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #555;
-    }
+.modo-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: opacity 0.3s ease;
+}
 
-    section ul {
-      padding-left: 20px;
-    }
+.modo-card:hover img {
+  content: url('./Background/Default.png');
+  object-fit: contain;
+}
 
-    section li {
-      margin-bottom: 10px;
-    }
+.modo-card span {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
 
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-    }
 
-    .full-width {
-      width: 100%;
-    }
 
-    .competitivo-background,
-    .casual-background,
-    .para-tomar-background {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
-        ),
-        url('./Background/Competitivo.png');
-      color: white;
-    }
 
-    .competitivo-background {
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
-        ),
-        url('./Background/Competitivo.png');
-    }
+@media (max-width: 768px) {
+  .modo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 50px 60px;
+  max-width: 1080px;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+}
 
-    .casual-background {
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
-        ),
-        url('./Background/Casual.png');
-    }
+  .modo-card {
+    padding: 20px;
+  }
 
-    .para-tomar-background {
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
-        ),
-        url('./Background/Para tomar.png');
-    }
-
-    .competitivo-background h2,
-    .casual-background h2,
-    .para-tomar-background h2 {
-      color: white;
-      border-bottom: none;
-    }
-
-    .competitivo-background p,
-    .competitivo-background ul,
-    .competitivo-background li,
-    .competitivo-background h3,
-    .casual-background p,
-    .casual-background ul,
-    .casual-background li,
-    .casual-background h3,
-    .para-tomar-background p,
-    .para-tomar-background ul,
-    .para-tomar-background li,
-    .para-tomar-background h3 {
-      color: white;
-    }
   
-    .navbar.scrolled {
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    }
 
-  </style>
+.modo-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: opacity 0.3s ease;
+}
+
+.modo-card:hover img {
+  content: url('./Background/Default.png');
+  object-fit: contain;
+}
+
+.modo-card span {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .navbar.show {
+    display: flex;
+  }
+
+  .navbar a {
+    margin: 10px 0;
+  }
+}
+
+.modo-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.modo-card:nth-child(1) { animation-delay: 0.2s; }
+.modo-card:nth-child(2) { animation-delay: 0.4s; }
+.modo-card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-top: 3px solid #555;
+}
+
+</style>
 </head>
 <body>
   <header class="navbar-header">
     <h1>Reglas de SapoPerro</h1>
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
-      <a href="/">Inicio</a>
-      <a href="/reglas">Reglas</a>
-      <a href="https://articulo.mercadolibre.com.co/MCO-1582314833-juego-de-mesa-sapoperro-_JM" target="_blank">Comprar</a>
-    </nav>
+    
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+
+<button class="hamburger" onclick="toggleMenu()">☰</button>
+
+  <a href="/">Inicio</a>
+  <a href="/reglas">Reglas</a>
+  <a href="https://articulo.mercadolibre.com.co/MCO-1582314833-juego-de-mesa-sapoperro-_JM" target="_blank">Comprar</a>
+</nav>
+
   </header>
-
   <main>
-    <section id="competitivo" class="competitivo-background full-width">
-      <h2>Competitivo ⚔️</h2>
-      <p style="text-align: center;">Para aquellos que ganar lo es todo.</p>
-      <h3>Antes de jugar:</h3>
-      <ul>
-        <li>Se reparten 3 cartas a cada jugador.</li>
-        <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
-        <li>El resto del mazo queda en el centro de la mesa.</li>
-        <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
-      </ul>
-      <h3>Inicio de juego:</h3>
-      <ul>
-        <li>Empieza quien tenga la carta más baja.</li>
-      </ul>
-      <h3>Turnos:</h3>
-      <ul>
-        <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
-        <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
-        <li>La carta jugada debe ser igual o mayor que la anterior.</li>
-        <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
-        <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas y luego las tapadas.</li>
-        <li>Gana quien se quede primero sin cartas.</li>
-      </ul>
-      <h3>Cartas Especiales:</h3>
-      <ul>
-        <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
-        <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
-        <li><strong>Sapo:</strong> El siguiente jugador debe poner una carta morada.</li>
-        <li><strong>Perro:</strong> El siguiente jugador debe poner una carta naranja.</li>
-        <li><strong>Espejo:</strong> Copia la carta jugada antes.</li>
-      </ul>
-      <p><em>Nota:</em> No puedes responder una carta especial con otra diferente, excepto "Sapo" y "Perro" respetando el color.</p>
-    </section>
-
-    <section id="casual" class="casual-background full-width">
-      <h2>Casual 😎</h2>
-      <p style="text-align: center;">Para los que nos gusta parchar.</p>
-      
-      <h3>Antes de jugar:</h3>
-      <ul>
-        <li>Se reparten 3 cartas a cada jugador.</li>
-        <li>Frente a cada jugador se colocan 3 cartas destapadas y 3 cartas tapadas.</li>
-        <li>El resto del mazo queda en el centro de la mesa.</li>
-        <li>Los jugadores pueden intercambiar cartas de su mano con las destapadas antes de comenzar.</li>
-      </ul>
-      <h3>Inicio de juego:</h3>
-      <ul>
-        <li>Empieza quien tenga la carta más baja.</li>
-      </ul>
-      <h3>Turnos:</h3>
-      <ul>
-        <li>En cada turno, coloca una carta siguiendo el orden de derecha a izquierda.</li>
-        <li>Debes mantener siempre 3 cartas en tu mano; roba si tienes menos.</li>
-        <li>La carta jugada debe ser igual o mayor que la anterior.</li>
-        <li>Si no puedes jugar, tomas todas las cartas de la pila.</li>
-        <li>Cuando se acaben las cartas del mazo, usa primero tus cartas destapadas y luego las tapadas.</li>
-        <li>Gana quien se quede primero sin cartas.</li>
-      </ul>
-      <h3>Cartas Especiales:</h3>
-      <ul>
-        <li><strong>Fuego:</strong> Elimina todas las cartas de la mesa y el siguiente jugador inicia.</li>
-        <li><strong>Menor:</strong> El siguiente jugador debe colocar un número igual o menor.</li>
-        <li><strong>Sapo:</strong> El siguiente jugador debe poner una carta morada.</li>
-        <li><strong>Perro:</strong> El siguiente jugador debe poner una carta naranja.</li>
-        <li><strong>ElGrande:</strong> Copia la carta jugada antes.</li>
-      </ul>
-      <p><em>Nota:</em> Si se ponen varios poderes al tiempo la ultima carta puesta es la que va.</p>
-
-    </section>
-
-    <section id="para-tomar" class="para-tomar-background full-width">
-      <h2>Para Tomar 🍻🔞</h2>
-      <p style="text-align: center;">Para los que la vida es una recocha.</p>
-      
-      <h3>Para este modo juegas como prefieras incluyendo lo siguiente:</h3>
-      <ul>
-        <li>Sapo: si te miran al tomar toman contigo por sapo</li>
-        <li>Perro: escoges a alguien para que sea tu perro, cada vez que tomes tienen que tomar</li>
-        <li>Menor: Todos muestran su mayor carta, el menor debe tomar, los poderes cuentan como 10. Si no hay cartas en la mano cuenta como 1</li>
-        <li>Fuego: pones una regla que todos deben seguir hasta el siguiente fuego</li>
-        <li>Espejo: esa persona escoge un juego y el perdedor toma</li>
-      </ul>
-      
-
-    </section>
-  </main>
-
+  <h2>Selecciona un modo de juego</h2>
+  <div class="modo-container">
+    <a href="competitivo.html" class="modo-card">
+      <img src="./Background/Competitivo.png" alt="Modo Competitivo" />
+      <span>⚔️ Competitivo</span>
+    </a>
+    <a href="casual.html" class="modo-card">
+      <img src="./Background/Casual.png" alt="Modo Casual" />
+      <span>😎 Casual</span>
+    </a>
+    <a href="para-tomar.html" class="modo-card">
+      <img src="./Background/Para tomar.png" alt="Modo Para Tomar" />
+      <span>🍻🔞 Para Tomar</span>
+    </a>
+    <a href="https://www.instagram.com/direct/t/17849196414232931" class="modo-card">
+      <img src="./Background/Idea.png" alt="Ideas" />
+      <span>Tienes tu propio modo? Escribenos</span>
+    </a>
+  </div>
+</main>
   <footer>
     &copy; 2025 TroubleMakers. Todos los derechos reservados.
   </footer>
+  
+<script>
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
 
-  <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
+
+<script>
+  function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("show");
+  }
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const paraTomarLink = document.querySelector('a[href="para-tomar.html"]');
+    if (paraTomarLink) {
+      paraTomarLink.addEventListener("click", function(e) {
+        e.preventDefault();
+        const confirmado = confirm("Este modo es solo para mayores de edad. ¿Eres mayor de 18 años?");
+        if (confirmado) {
+          window.location.href = this.href;
+        }
       });
-    }, { threshold: 0.1 });
-    sections.forEach(section => observer.observe(section));
-  </script>
+    }
+  });
+</script>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-  </script>
 </body>
 </html>
