@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 
-<html class="font-opt-3" lang="es">
+<html class="font-opt-3" lang="en">
 <head>
 <!-- hreflang for language variants (relative URLs as requested) -->
-<link rel="alternate" href="./" hreflang="es" />
-<link rel="alternate" href="./en/" hreflang="en" />
-<link rel="alternate" href="./" hreflang="x-default" />
-
-<link rel="alternate" href="./en/" hreflang="en" />
-<link rel="alternate" href="./" hreflang="x-default" />
-
+<link href="./" hreflang="en" rel="alternate"/>
+<link href="./en/" hreflang="en" rel="alternate"/>
+<link href="./" hreflang="x-default" rel="alternate"/>
+<link href="./en/" hreflang="en" rel="alternate"/>
+<link href="./" hreflang="x-default" rel="alternate"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Troublemakers</title>
@@ -50,14 +48,14 @@
   html,body{ overflow-x:hidden; }
   @font-face{
     font-family:'ElGrande';
-    src:url('./Fonts/ElGrande Regular.ttf') format('truetype');
+    src:url('../Fonts/ElGrande Regular.ttf') format('truetype');
     font-weight:normal; font-style:normal; font-display:swap;
   }
   *{ margin:0; padding:0; box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
 
   body{
-    background:url('./Background/Test.png') no-repeat center center fixed;
+    background:url('../Background/Test.png') no-repeat center center fixed;
     background-size:cover; min-height:90vh; color:white;
     display:flex; flex-direction:column;
   }
@@ -125,7 +123,7 @@
   }
   .modo-card:hover{ transform:scale(1.05); }
   .modo-card img{ width:100%; height:280px; object-fit:contain; border-radius:12px; margin-bottom:15px; transition:opacity .3s ease; }
-  .modo-card:hover img{ content:url('./Background/Default.png'); object-fit:contain; }
+  .modo-card:hover img{ content:url('../Background/Default.png'); object-fit:contain; }
   .modo-card span{ font-size:1.6rem; font-weight:bold; }
   .modo-card:nth-child(1){ animation-delay:.2s; }
   .modo-card:nth-child(2){ animation-delay:.4s; }
@@ -207,80 +205,76 @@
 </style>
 </head>
 <body>
-
 <!-- Language switcher -->
 <div id="lang-switch" style="position:fixed;bottom:16px;right:16px;z-index:9999;
 background:hsla(0, 0%, 100%, 0.8);backdrop-filter:saturate(180%) blur(6px);border:1px solid #ddd;padding:10px 14px;border-radius:999px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:14px;">
-  <a href="./en/index.html" style="text-decoration:none;color:#111;">English</a>
+<a href="../index.html" style="text-decoration:none;color:#111;">Español</a>
 </div>
-
-
-
-<nav aria-label="Main Navigation" class="navbar" id="navbar" role="navigation"><a href="#inicio">Inicio</a><a href="#tienda">Tienda</a><a href="#aliados">Aliados</a><a href="#reglas">Reglas</a><a href="#faq">FQA</a><a aria-label="Instagram" class="icono-instagram" href="https://instagram.com/troublemakers_co" rel="noopener noreferrer" target="_blank">
+<nav aria-label="Main Navigation" class="navbar" id="navbar" role="navigation"><a href="#inicio">Home</a><a href="#tienda">Store</a><a href="#aliados">Partners</a><a href="#reglas">Rules</a><a href="#faq">FQA</a><a aria-label="Instagram" class="icono-instagram" href="https://instagram.com/troublemakers_co" rel="noopener noreferrer" target="_blank">
 <svg aria-hidden="true" role="img" viewbox="0 0 24 24">
 <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4ZM17.8 6.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM21 7.1v9.8A4.1 4.1 0 0 1 16.9 21H7.1A4.1 4.1 0 0 1 3 16.9V7.1A4.1 4.1 0 0 1 7.1 3h9.8A4.1 4.1 0 0 1 21 7.1ZM19.2 7a2.3 2.3 0 0 0-2.3-2.3H7.1A2.3 2.3 0 0 0 4.8 7.1v9.8A2.3 2.3 0 0 0 7.1 19.2h9.8a2.3 2.3 0 0 0 2.3-2.3Z"></path>
 </svg>
 </a></nav>
 <header class="hero" id="hero">
 <h1>SapoPerro</h1>
-<p style="max-width:800px; margin-top:20px; font-size:1.2rem; line-height:1.6;">Bienvenido a SapoPerro by Troublemakers. Aquí podrás encontrar nuestros productos y mucha diversión. Nos enfocamos en experiencias para todos: para aquellos que compiten por la victoria, quienes buscan pasar un rato agradable o quienes desean darle un toque picante a cualquier evento.</p>
+<p style="max-width:800px; margin-top:20px; font-size:1.2rem; line-height:1.6;">Welcome to SapoPerro by Troublemakers. Here you will find our products and lots of fun. We focus on experiences for everyone: those who compete for victory, those looking to have a good time, or those wanting to add a spicy touch to any event.</p>
 </header>
 <section id="inicio">
-<h2>¿Quiénes Somos?</h2>
-<p>En <strong>Troublemakers</strong> creemos que la diversión no tiene límites. Somos un equipo creativo apasionado por diseñar experiencias únicas que unen a las personas a través de juegos llenos de emoción, risas y un toque de irreverencia. Nuestro proyecto estrella, <em>SapoPerro</em>, nació con la idea de transformar cualquier reunión en un momento inolvidable, mezclando estrategia, competencia y un ambiente relajado para todo tipo de jugadores.</p>
-<p>Trabajamos con dedicación en cada detalle: desde el diseño de las cartas y reglas, hasta la calidad de los materiales y la presentación final. No solo creamos un juego, creamos una experiencia para compartir con amigos, familia y quien se atreva a aceptar el reto. Porque en Troublemakers, no se trata solo de jugar, se trata de vivirlo.</p>
+<h2>Who Are We?</h2>
+<p>In <strong>Troublemakers</strong> We believe that fun has no limits. We are a creative team passionate about designing unique experiences that bring people together through games full of excitement, laughter, and a touch of irreverence. Our flagship project, <em>SapoPerro</em>, was born from the idea of transforming any gathering into an unforgettable moment, blending strategy, competition, and a relaxed atmosphere for all types of players.</p>
+<p>We work with dedication on every detail: from the design of the cards and rules, to the quality of the materials and final presentation. We don’t just create a game, we create an experience to share with friends, family, and anyone daring enough to take on the challenge. Because at Troublemakers, it’s not just about playing, it’s about living it.</p>
 </section>
 <section id="tienda">
-<h2>Tienda</h2>
-<p>Aquí puedes encontrar nuestros productos al mejor precio.</p>
+<h2>Store</h2>
+<p>Here you can find our products at the best price.</p>
 <a class="link-reglas" href="https://articulo.mercadolibre.com.co/MCO-1582314833-juego-de-mesa-sapoperro-_JM" rel="noopener noreferrer" target="_blank">
-<img alt="Ir a la tienda" src="./Background/Default.png" style="max-width:200px; border-radius:10px;"/>
+<img alt="Ir a la tienda" src="../Background/Default.png" style="max-width:200px; border-radius:10px;"/>
 </a>
 </section>
 <section id="aliados">
-<h2>Nuestros Aliados</h2>
-<p>Encuentra SapoPerro en estos puntos de venta aliados. Haz clic para abrir su ubicación o sitio web.</p>
+<h2>Our Partners</h2>
+<p>Find SapoPerro at these partner stores. Click to open their location or website.</p>
 <div class="modo-container">
 <a class="modo-card" href="https://maps.app.goo.gl/LdxgeFenD8YT7qzR9" rel="noopener noreferrer" target="_blank">
-<img alt="Relier" src="./Background/relier.png"/><span>Relier</span>
+<img alt="Relier" src="../Background/relier.png"/><span>Relier</span>
 </a>
 <a class="modo-card" href="https://www.instagram.com/creomijuego/" rel="noopener noreferrer" target="_blank">
-<img alt="Creo Mi Juego" src="./Background/creomijuego.png"/><span>Creo Mi Juego</span>
+<img alt="Creo Mi Juego" src="../Background/creomijuego.png"/><span>Creo Mi Juego</span>
 </a>
 <a class="modo-card" href="https://maps.app.goo.gl/64MrF3ZAM4Fn59qG6" rel="noopener noreferrer" target="_blank">
-<img alt="PinguJuegos" src="./Background/pingu.png"/><span>PinguJuegos</span>
+<img alt="PinguJuegos" src="../Background/pingu.png"/><span>PinguJuegos</span>
 </a>
 </div>
 </section>
 <section id="reglas">
-<h2>Reglas</h2>
+<h2>Rules</h2>
 <div class="modo-container">
 <a class="modo-card" href="competitivo.html">
-<img alt="⚔️ Competitivo" src="./Background/Competitivo.png"/><span>⚔️ Competitivo</span>
+<img alt="⚔️ Competitive" src="../Background/Competitivo.png"/><span>⚔️ Competitive</span>
 </a>
 <a class="modo-card" href="casual.html">
-<img alt="😎 Casual" src="./Background/Casual.png"/><span>😎 Casual</span>
+<img alt="😎 Casual" src="../Background/Casual.png"/><span>😎 Casual</span>
 </a>
 <a class="modo-card" href="para-tomar.html">
-<img alt="🍻🔞 Para Tomar" src="./Background/Para tomar.png"/><span>🍻🔞 Para Tomar</span>
+<img alt="🍻🔞 Para Tomar" src="../Background/Para tomar.png"/><span>🍻🔞 For Drinking</span>
 </a>
 <a class="modo-card" href="https://www.instagram.com/direct/t/17849196414232931">
-<img alt="Ideas" src="./Background/Idea.png"/><span>Tienes tu propio modo? Escríbenos</span>
+<img alt="Ideas" src="../Background/Idea.png"/><span>Have your own game mode? Write to us.</span>
 </a>
 </div>
 </section>
 <section id="faq">
-<h2>Preguntas Frecuentes</h2>
-<p><strong>1. ¿Qué es SapoPerro?</strong><br/>
-      SapoPerro es un juego de mesa creado por Troublemakers, diseñado para que te diviertas con amigos y familia, combinando competencia, estrategia y momentos únicos.</p>
-<p><strong>2. ¿Dónde puedo comprarlo?</strong><br/>
-      Puedes adquirirlo directamente con nosotros través de nuestra página en MercadoLibre <a class="link-reglas" href="#tienda">Tienda</a> o a través de nuestros aliados. <a class="link-reglas" href="#aliados">Aliados</a></p>
-<p><strong>3. ¿El juego es apto para todas las edades?</strong><br/>
-      Sí, aunque recomendamos supervisión de un adulto si hay niños pequeños, ya que algunas dinámicas pueden tener un toque picante.</p>
-<p><strong>4. ¿Hacen envíos a todo el país?</strong><br/>
-      Sí, enviamos a cualquier ciudad de Colombia mediante nuestros aliados logísticos.</p>
-<div class="faq-form" id="enviarnos-pregunta"><h3>¿No ves tu duda aquí? Envíanos tu pregunta</h3><form aria-label="Formulario para enviar preguntas" id="form-pregunta" novalidate="novalidate"><label class="visually-hidden" for="website">No llenar este campo (anti-spam)</label><input autocomplete="off" class="visually-hidden" id="website" name="website" tabindex="-1" type="text"/><div class="row"><div style="flex:1 1 260px"><label for="nombre">Nombre</label><input id="nombre" name="nombre" placeholder="Tu nombre" required="required" type="text"/></div><div style="flex:1 1 260px"><label for="email">Correo electrónico</label><input id="email" name="email" placeholder="tunombre@correo.com" required="required" type="email"/></div></div><label for="mensaje">Tu pregunta</label><textarea id="mensaje" name="mensaje" placeholder="Escribe tu pregunta aquí..." required="required"></textarea><div class="actions"><button type="submit">Enviar</button><button type="reset">Limpiar</button></div><div class="hint">Al hacer clic en Enviar se abrirá tu cliente de correo con el mensaje preparado.</div></form></div></section>
-<footer>© 2025 TroubleMakers. Todos los derechos reservados.</footer>
+<h2>Frequently Asked Questions</h2>
+<p><strong>1. ¿What is SapoPerro?</strong><br/>
+      SapoPerro is a board game created by Troublemakers, designed for you to have fun with friends and family, combining competition, strategy, and unique moments.</p>
+<p><strong>2. ¿Where can I buy it?</strong><br/>
+      You can purchase it directly from us through our page on MercadoLibre <a class="link-reglas" href="#tienda">Store</a> or through our partners.<a class="link-reglas" href="#aliados">Partners</a></p>
+<p><strong>3. ¿Is the game suitable for all ages?</strong><br/>
+      Yes, although we recommend adult supervision if there are young children, as some dynamics may have a spicy twist.</p>
+<p><strong>4. ¿Do you ship nationwide?</strong><br/>
+      Yes, we ship to any city in Colombia through our logistics partners.</p>
+<div class="faq-form" id="enviarnos-pregunta"><h3>Don’t see your question here? Send us your question</h3><form aria-label="Formulario para enviar preguntas" id="form-pregunta" novalidate="novalidate"><label class="visually-hidden" for="website">No llenar este campo (anti-spam)</label><input autocomplete="off" class="visually-hidden" id="website" name="website" tabindex="-1" type="text"/><div class="row"><div style="flex:1 1 260px"><label for="nombre">Name</label><input id="nombre" name="nombre" placeholder="Your name" required="required" type="text"/></div><div style="flex:1 1 260px"><label for="email">Email</label><input id="email" name="email" placeholder="youremail@email.com" required="required" type="email"/></div></div><label for="mensaje">Your question</label><textarea id="mensaje" name="mensaje" placeholder="Write your question here..." required="required"></textarea><div class="actions"><button type="submit">Send</button><button type="reset">Clear</button></div><div class="hint">Clicking Send will open your email client with the prepared message.</div></form></div></section>
+<footer>© 2025 TroubleMakers. All rights reserved.</footer>
 <script>
     // Navbar sticky con fondo al hacer scroll
     window.addEventListener('scroll', () => {
@@ -339,7 +333,6 @@ background:hsla(0, 0%, 100%, 0.8);backdrop-filter:saturate(180%) blur(6px);borde
       }, false);
     })();
   </script>
-
 <script>
   // Confirmación de mayoría de edad para "Para Tomar"
   document.addEventListener('DOMContentLoaded', function() {
@@ -347,18 +340,16 @@ background:hsla(0, 0%, 100%, 0.8);backdrop-filter:saturate(180%) blur(6px);borde
     if (paraTomarLink) {
       paraTomarLink.addEventListener('click', function(event) {
         event.preventDefault(); // Evita que se abra directamente
-        const mayorEdad = confirm("Este modo es solo para mayores de 18 años. ¿Tienes 18 años o más?");
+        const mayorEdad = confirm("This mode is for adults only. ¿Are you 18 or older?");
         if (mayorEdad) {
           window.location.href = this.href;
         } else {
-          alert("Lo sentimos, este modo es solo para mayores de edad.");
+          alert("Sorry, this mode is for adults only.");
         }
       });
     }
   });
 </script>
-
-
 <script>
 (function () {
   var KEY = 'lang';
@@ -386,6 +377,32 @@ background:hsla(0, 0%, 100%, 0.8);backdrop-filter:saturate(180%) blur(6px);borde
   } catch (e) {}
 })();
 </script>
-
+<script>
+(function () {
+  var KEY = 'lang';
+  var base = './'; // relative to /en/
+  var isHome = location.pathname.endsWith('/en/') || location.pathname.endsWith('/en/index.html') || location.pathname === base;
+  if (!isHome) return;
+  try {
+    var pref = localStorage.getItem(KEY);
+    if (pref) return; // already chosen
+    var isSpanish = /^es\b/i.test(navigator.language || '');
+    if (!isSpanish) return;
+    // Banner
+    var b = document.createElement('div');
+    b.style.cssText = 'position:fixed;bottom:16px;left:16px;z-index:9999;background:#fff;border:1px solid #ddd;padding:10px 14px;border-radius:10px;font-family:system-ui;';
+    b.innerHTML = 'Detectamos Español. <button id="go-es" style="margin-left:8px;">Cambiar a Español</button> <button id="stay" style="margin-left:6px;">Quedarme</button>';
+    document.body.appendChild(b);
+    document.getElementById('go-es').onclick = function(){
+      try { localStorage.setItem(KEY,'es'); } catch(e){}
+      location.href = '../index.html';
+    };
+    document.getElementById('stay').onclick = function(){
+      try { localStorage.setItem(KEY,'en'); } catch(e){}
+      b.remove();
+    };
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
