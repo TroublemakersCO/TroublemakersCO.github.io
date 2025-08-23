@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+
+<html class="font-opt-3" lang="en">
+<head>
+<!-- hreflang for language variants (relative) -->
+<link href="../pantano.html" hreflang="es" rel="alternate"/>
+<link href="./pantano.html" hreflang="en" rel="alternate"/>
+<link href="../pantano.html" hreflang="x-default" rel="alternate"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Swamp Mode</title>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Nunito:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>/* === Tipografías (3 combinaciones) === */
+:root {
+  --font-display: 'Luckiest Guy', cursive; /* default Option 1 */
+  --font-body: 'Poppins', sans-serif;
+}
+.font-opt-1 { --font-display: 'Luckiest Guy', cursive; --font-body: 'Poppins', sans-serif; }
+.font-opt-2 { --font-display: 'Bangers', cursive; --font-body: 'Inter', sans-serif; }
+.font-opt-3 { --font-display: 'Fredoka One', cursive; --font-body: 'Nunito', sans-serif; }
+
+/* Aplicación */
+body { font-family: var(--font-body); }
+h1, h2, h3 { font-family: var(--font-display); }
+
+
+/* Switcher flotante */
+.font-switcher {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1500;
+  display: flex;
+  gap: 8px;
+}
+.font-switcher button {
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  font-weight: 600;
+}
+.font-switcher button:hover { background: rgba(255,255,255,.2); }
+@media (max-width: 480px) {
+  .font-switcher { bottom: 12px; right: 12px; }
+  .font-switcher button { padding: 8px 10px; font-size: 0.85rem; }
+}
+
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  
+/* Fuentes y legibilidad */
+@font-face {
+  font-family: 'ElGrande';
+  src: url('./Fonts/ElGrande Regular.ttf') format('truetype');
+  font-display: swap;
+}
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+h1, h2, h3 { font-family: 'ElGrande', system-ui, sans-serif; }
+html, body { overflow-x: hidden; }
+@media (max-width: 480px) {
+  footer { padding: 16px; }
+}
+
+
+h1, h2, h3 { font-family: 'Luckiest Guy', cursive; }
+body { font-family: 'Poppins', sans-serif; }
+
+</style>
+<style>
+
+/* === Tipografías (3 combinaciones) === */
+:root {
+  --font-display: 'Luckiest Guy', cursive; /* default Option 1 */
+  --font-body: 'Poppins', sans-serif;
+}
+.font-opt-1 { --font-display: 'Luckiest Guy', cursive; --font-body: 'Poppins', sans-serif; }
+.font-opt-2 { --font-display: 'Bangers', cursive; --font-body: 'Inter', sans-serif; }
+.font-opt-3 { --font-display: 'Fredoka One', cursive; --font-body: 'Nunito', sans-serif; }
+
+/* Aplicación */
+body { font-family: var(--font-body); }
+h1, h2, h3 { font-family: var(--font-display); }
+
+
+/* Switcher flotante */
+.font-switcher {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1500;
+  display: flex;
+  gap: 8px;
+}
+.font-switcher button {
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  font-weight: 600;
+}
+.font-switcher button:hover { background: rgba(255,255,255,.2); }
+@media (max-width: 480px) {
+  .font-switcher { bottom: 12px; right: 12px; }
+  .font-switcher button { padding: 8px 10px; font-size: 0.85rem; }
+}
+
+
+    @font-face {
+      font-family: 'ElGrande';
+      src: url('./Fonts/ElGrande Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      font-family: 'ElGrande', Arial, sans-serif;
+    }
+  </style>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style></head>
+<body style="background: url('../Background/pantano.png') no-repeat center center scroll; background-size: cover; color: white;">
+<!-- Language switcher -->
+<div id="lang-switch" style="position:fixed;bottom:16px;right:16px;z-index:9999;
+background:#ffffffcc;backdrop-filter:saturate(180%) blur(6px);border:1px solid #ddd;padding:10px 14px;border-radius:999px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:14px;">
+<a href="../pantano.html" style="text-decoration:none;color:#111;">Español</a>
+</div>
+<header style="text-align: center; padding: 40px;">
+<h1>Swamp Mode</h1>
+<p>Everything is healthy and full of life.</p>
+</header>
+<main style="padding: 0; background-color: rgba(0, 0, 0, 0.4); text-shadow: 0 1px 2px rgba(0,0,0,.6);"><div style="padding: 20px 16px; font-weight: bold; font-size: 24px; color: #f8f8f8; text-align: left;">
+<ul> 
+  <li><strong>Objective: </strong> Have the lowest possible sum of points with your 4 face-down cards.</li> 
+</ul> 
+<h3>Before playing:</h3> 
+<ul> 
+  <li><strong> 1. </strong> Shuffle the deck and deal 4 face-down cards to each player.</li> 
+  <li><strong> 2. </strong> Each player may look at 2 of their own cards, whichever they choose.</li> 
+  <li><strong> 3. </strong> Place the deck in the center and flip the first card to start the discard pile.</li> 
+</ul> <h3>Start of the game:</h3> <ul> <li>The player to the dealer's right goes first.</li> 
+</ul> 
+<h3>Actions, only 1 per turn:</h3> 
+<ul> 
+  <li><strong> 1. </strong> You may draw the top card from the deck; you must either exchange it for one of your face-down cards or discard it.</li> 
+  <li><strong> 2. </strong> You may take the face-up card from the discard pile; you must exchange it for one of your cards, you cannot discard it.</li> 
+  <li>Number cards are worth their face value (1 - 10).</li> 
+</ul> 
+<h3>Special cards:</h3> 
+<ul> 
+  <li><strong> Fire: </strong> Worth 0 points.</li> 
+  <li><strong> Frog: </strong> Worth 10 points (Only when drawn from the deck, it allows you to look at one of your cards or another player's card; you must reveal it to use this ability).</li> 
+  <li><strong> Dog: </strong> Worth 10 points (When drawn from the deck, it allows you to swap one of your cards with one from another player; you must reveal it to use this ability).</li> 
+  <li><strong> Minor: </strong> Worth 13 points.</li> 
+</ul> 
+<h3>Special rules:</h3> 
+<ul> 
+  <li>If there is a card in the discard pile and you know you have another of the same value, you may flip yours face up and, if they match, discard them both and continue playing with 3 cards. But if you are wrong and they don't match, you must draw a face-down card from the deck and place it without looking at it.</li> 
+</ul> 
+<h3>End of the turn:</h3> 
+<ul> 
+  <li>When you believe you have fewer points than the others, you may call out "Frog Dog!"</li> 
+  <li>If you truly have the lowest total → you score no points.</li> 
+  <li>If someone has fewer points than you → you add your total + 10.</li> 
+  <li>All other players add their points normally.</li> 
+</ul> 
+<h3>End of the game:</h3> 
+<ul> 
+  <li>The game ends when a player reaches 100 points.</li> 
+  <li><strong>The winner</strong> is the one with the lowest total score.</li> 
+</ul>
+</div></main>
+<footer style="text-align: center; padding: 20px; background: #222; color: white;">
+    © 2025 TroubleMakers. All rights reserved.
+  </footer>
+<script>
+(function(){
+  const KEY = 'sapoperro-font-opt';
+  function apply(opt){
+    const html = document.documentElement;
+    html.classList.remove('font-opt-1','font-opt-2','font-opt-3');
+    html.classList.add('font-opt-' + opt);
+    try { localStorage.setItem(KEY, String(opt)); } catch(e){}
+  }
+  // Load preference
+  try {
+    const saved = localStorage.getItem(KEY);
+    if(saved){ apply(saved); }
+  } catch(e){}
+
+  // Expose globally
+  window.setFontOpt = apply;
+})();
+</script>
+</body>
+</html>
