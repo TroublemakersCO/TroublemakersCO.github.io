@@ -3,13 +3,11 @@
 <html class="font-opt-3" lang="es">
 <head>
 <!-- hreflang for language variants (relative URLs as requested) -->
-<link rel="alternate" href="./" hreflang="es" />
-<link rel="alternate" href="./en/" hreflang="en" />
-<link rel="alternate" href="./" hreflang="x-default" />
-
-<link rel="alternate" href="./en/" hreflang="en" />
-<link rel="alternate" href="./" hreflang="x-default" />
-
+<link href="./" hreflang="es" rel="alternate"/>
+<link href="./en/" hreflang="en" rel="alternate"/>
+<link href="./" hreflang="x-default" rel="alternate"/>
+<link href="./en/" hreflang="en" rel="alternate"/>
+<link href="./" hreflang="x-default" rel="alternate"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Troublemakers</title>
@@ -207,15 +205,11 @@
 </style>
 </head>
 <body>
-
 <!-- Language switcher -->
 <div id="lang-switch" style="position:fixed;bottom:16px;right:16px;z-index:9999;
 background:hsla(0, 0%, 100%, 0.8);backdrop-filter:saturate(180%) blur(6px);border:1px solid #ddd;padding:10px 14px;border-radius:999px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:14px;">
-  <a href="./en/index.html" style="text-decoration:none;color:#111;">English</a>
+<a href="./en/index.html" style="text-decoration:none;color:#111;">English</a>
 </div>
-
-
-
 <nav aria-label="Main Navigation" class="navbar" id="navbar" role="navigation"><a href="#inicio">Inicio</a><a href="#tienda">Tienda</a><a href="#aliados">Aliados</a><a href="#reglas">Reglas</a><a href="#faq">FQA</a><a aria-label="Instagram" class="icono-instagram" href="https://instagram.com/troublemakers_co" rel="noopener noreferrer" target="_blank">
 <svg aria-hidden="true" role="img" viewbox="0 0 24 24">
 <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4ZM17.8 6.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM21 7.1v9.8A4.1 4.1 0 0 1 16.9 21H7.1A4.1 4.1 0 0 1 3 16.9V7.1A4.1 4.1 0 0 1 7.1 3h9.8A4.1 4.1 0 0 1 21 7.1ZM19.2 7a2.3 2.3 0 0 0-2.3-2.3H7.1A2.3 2.3 0 0 0 4.8 7.1v9.8A2.3 2.3 0 0 0 7.1 19.2h9.8a2.3 2.3 0 0 0 2.3-2.3Z"></path>
@@ -241,7 +235,7 @@ background:hsla(0, 0%, 100%, 0.8);backdrop-filter:saturate(180%) blur(6px);borde
 <h2>Nuestros Aliados</h2>
 <p>Encuentra SapoPerro en estos puntos de venta aliados. Haz clic para abrir su ubicación o sitio web.</p>
 <div class="modo-container">
-<a class="modo-card" href="https://maps.app.goo.gl/LdxgeFenD8YT7qzR9" rel="noopener noreferrer" target="_blank">
+<a class="modo-card" href="https://ig.me/m/troublemakers_co" id="link-ideas" rel="noopener noreferrer" target="_blank">
 <img alt="Relier" src="./Background/relier.png"/><span>Relier</span>
 </a>
 <a class="modo-card" href="https://www.instagram.com/creomijuego/" rel="noopener noreferrer" target="_blank">
@@ -345,7 +339,6 @@ background:hsla(0, 0%, 100%, 0.8);backdrop-filter:saturate(180%) blur(6px);borde
       }, false);
     })();
   </script>
-
 <script>
   // Confirmación de mayoría de edad para "Para Tomar"
   document.addEventListener('DOMContentLoaded', function() {
@@ -363,8 +356,6 @@ background:hsla(0, 0%, 100%, 0.8);backdrop-filter:saturate(180%) blur(6px);borde
     }
   });
 </script>
-
-
 <script>
 (function () {
   var KEY = 'lang';
@@ -392,6 +383,18 @@ background:hsla(0, 0%, 100%, 0.8);backdrop-filter:saturate(180%) blur(6px);borde
   } catch (e) {}
 })();
 </script>
+<script>
+(function(){
+  const link = document.getElementById('link-ideas');
+  if(!link) return;
 
-</body>
+  const MENSAJE = "¡Hola! Tengo una idea para un modo de juego de SapoPerro: ...";
+
+  link.addEventListener('click', function(){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(MENSAJE).catch(()=>{});
+    }
+  }, false);
+})();
+</script></body>
 </html>
